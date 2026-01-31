@@ -1,0 +1,62 @@
+<!DOCTYPE  html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Resilience Impact Dashboard</title>
+    <style>
+      body{ font-family: Arial, sans-serif;
+           background:#f5f7fa;
+           padding: 20px;}
+      h1{ text-align: center;
+        }
+      table{ width: 100%;
+            border-collapse: collapse;
+            margin-top:20px;
+            background: white;
+           }
+      th, td{ padding: 2px;
+             border: 1px solid #ddd;
+             text-align: left;}
+      th{ background: #2c3e50;
+         color: white;}
+    </style>
+  </head>
+  <body>
+    <h1>Post-Shock Resilience Results</h1>
+    <table><thead>
+      <tr>
+        <th>Country</th>
+        <th>Baseline Score</th>
+        <th>Post-Shock Score</th>
+        <th>Impact Explanation</th>
+      </tr>
+    </thead>
+      <tbody>
+        <!-- data will be injected here-->
+      </tbody>
+    </table>
+    <script>const sampleData = {"India":{"baseline_score": 72,
+                                         "post_shock_score":61'
+                                         "impact":"Moderate decline due to economic shock"},
+      "USA":{"baseline_score": 78,
+       "post_shock_score":69'
+     "impact":"Resilient instiyuitions limited damage"},
+      };
+      const tbody = document.querySelector("tbody");
+
+      for (const country in sampleData){
+        const row = document.createElement("tr");
+
+        row.innerHTML = <td>${country}.{baseline_score}</td>
+                       <td>${sampleData[country].baseline_score}</td>
+                       <td>${sampleData[country].post_shock_score}</td>
+                       <td>${sampleData[country].impact}</td>
+        ;
+        
+        tbody.appendChild(row);
+      }
+        
+                
+    </script>
+  </body>
+</html>
