@@ -35,16 +35,24 @@
         <!-- data will be injected here-->
       </tbody>
     </table>
-    <script>const sampleData = {"India":{"baseline_score": 72,
-                                         "post_shock_score":61'
-                                         "impact":"Moderate decline due to economic shock"},
-      "USA":{"baseline_score": 78,
-       "post_shock_score":69'
-     "impact":"Resilient instiyuitions limited damage"},
-      };
+    <script>
+      const sampleData = {Country: "India", 
+                          baseline: 72,
+                          postShock::61,
+                          impact:"Moderate decline due to economic shock"},
+                         {Country: "USA", 
+                          baseline: 78,
+                          postShock::69,
+                          impact:"Strong institutions reduced shock impact"},
+                          {Country: "Germany", 
+                          baseline: 75,
+                          postShock::66,
+                          impact:"Economic buffers softened the shock"},
+                          ];
+
       const tbody = document.querySelector("tbody");
 
-      for (const country in sampleData){
+      data.forEach(item => {
         const row = document.createElement("tr");
 
         row.innerHTML = <td>${country}.{baseline_score}</td>
@@ -54,8 +62,7 @@
         ;
         
         tbody.appendChild(row);
-      }
-        
+      });  
                 
     </script>
   </body>
